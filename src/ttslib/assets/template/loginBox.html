@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>loginbox</title>
+	<link type="text/css" rel="stylesheet" href="../css/open_style.css"></link>
+</head>
+<body>
+	<div id="faqbg"></div>
+	<div id="faqdiv" style="display:none;width:550px;">
+		<iframe style="position:absolute;z-index:-1;width:550px;height:410px;" frameborder="0"></iframe>
+		<div class="unitetan">
+			<p class="unitetan_p">
+				<span class="right loginClose" id="trip8080LoginBoxClose"></span>
+				<b class="loginleft20 left" style="font-size:16px;color:#000">畅途会员登录</b>
+			</p>
+			<div class="logintan">
+				<ul>
+					<li class="line30">
+					<span class="left loginwidth60" style="font-size:14px;color:#000;margin-top:3px;">用&nbsp;户&nbsp;名</span>
+					<span class="left"><input  class="loginInput trip8080Col999" value="" id="trip8080LoginNameInput"/></span>
+					<a class="left loginleft10 loginBlue" href="http://www.trip8080.com/login/register.html" target="_blank">
+						免费注册</a>
+					</li>
+					<li class="clear loginline20 loginbottom9">
+						<span class="left loginleft60 trip8080Col999 loginbottom9" id="trip8080LoginNameTip" style="height:20px;"></span>
+					</li>
+					<li class="line30 clear">
+						<span class="left loginwidth60" style="font-size:14px;color:#000;margin-top:3px;">密&nbsp;&nbsp;&nbsp;码</span>
+						<span class="left"><input type="password" id="trip8080LoginPwd" class="loginInput"/></span>
+						<a class="left loginleft10 hui999" href="http://www.trip8080.com/user/backpwd.html" target="_blank">忘记密码</a>
+					</li>
+					<li class="clear loginline20">
+						<span class="left loginleft60 trip8080Col999 loginbottom9" id="trip8080LoginPwdTip" style="height:20px;"></span>
+					</li>
+					<span style="display:none;" id="trip8080CaptchaSpan">
+						<li class="line30 clear" id="captchaLi">
+							<span class="left font14 loginwidth60" style="font-size:12px;color:#000;margin-top:3px;">验证码</span>
+							<span class="left">
+								<input id="trip8080Captcha" class="inputDuankk"/>
+							</span>
+							<img class="left trip8080left10" id="trip8080CaptchaSrc"/>
+							<a class="left trip8080left10 blue_05" href="javascript:void(0);" id="changeCaptcha">换一张</a>
+						</li>
+						<li class="clear loginline20">
+							<span class="left loginleft60 trip8080Col999 loginbottom9" id="captchaTip" style="height:20px;"></span>
+						</li>
+					</span>
+					<li class="loginline22 clear">
+						<span class="left loginwidth60 font14">&nbsp;</span>
+						<span class="left"><label style="font-size:12px;color:#000">
+							<input type="checkbox" id="trip8080RememberMe" class="loginie67"/>记住用户名</label>
+						</span>
+						<span class="left"><label class="loginleft20" style="font-size:12px;color:#000" >
+							<input type="checkbox" id="trip8080AutoLogin" class="loginie67"/>自动登录</label>
+						</span>
+					</li>
+					<li class="loginline22 clear">&nbsp;</li>
+					<li class="clear">
+						<span class="left"><a href="javascript:void(0);" id="trip8080LoginBtn" class="loginBTN loginleft60">登&nbsp;&nbsp;录</a> 
+						</span>
+					</li>
+					<li class="clear  loginline22 ">&nbsp;</li>
+					<li class="clear logintop5" style="font-size:12px;color:#000">使用合作网账号登录</li>
+					<li class="clear logintop5"><input type="button" value="用QQ账号登录"  class="login_QQBtn" id="trip8080QQLogin"><input type="button" value="用微博账号登录" class="login_weiboBtn" id="trip8080SinaLogin">
+					</li>
+				</ul>
+				<div class="clear"></div>
+				<div id="trip8080wb_connect_btn" style="display:none"></div>
+			</div>
+		</div>
+	</div> 
+</body>
+</html>

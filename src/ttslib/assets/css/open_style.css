@@ -1,0 +1,689 @@
+@charset "utf-8";
+/*外调搜索框*/
+.trip8080 {
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+	color:#333333;
+	z-index:900;
+}
+a.linkcss:link, a.linkcss:visited {
+	color:#002398;
+	text-decoration:none;
+}
+a.linkcss:hover, a.linkcss:active {
+	color:#ff6600;
+	text-decoration:underline;
+}
+.trip8080Color9 {
+	color:#999999;
+}
+.trip8080Main {
+	width:578px;
+	height:128px;
+	border:solid 1px #b7d3e8;
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+	color:#333333;
+}
+.trip8080Left {
+	width:95px;
+	_width:88px;
+	float:left;
+	list-style:none;
+}
+.trip8080Left ul {
+	margin:0px;
+	padding:0px;
+}
+.trip8080Left ul li {
+	height:42px;
+	line-height:42px;
+	list-style:none;
+	border-bottom:solid 1px #b7d3e8;
+	width:92px;
+	_width:85px;
+	margin:0px;
+	font-size:12px;
+	color:#333333;
+}
+.trip8080Lihover {
+	display:block;
+	text-align:center;
+	color:#333333;
+	text-decoration:none;
+	border-left:none;
+	border-right:solid 1px #b7d3e8;
+	background:#f6fbff;
+	padding-left:3px;
+	outline: none;
+}
+.trip8080Liactive {
+	display:block;
+	text-align:center;
+	color:#333333;
+	text-decoration:none;
+	border-left:4px solid #faa001;
+	background:#fff;
+	border-right:none;
+	outline: none;
+}
+.trip8080Right {
+	width:482px;
+	height:128px;
+	float:right;
+}
+.trip8080RightInD {
+	background:url(../../img/trip8080_btnandbj.gif) no-repeat -24px 0;
+	height:24px;
+	margin-right:20px;
+	width:155px;
+}
+.trip8080Rightinput {
+	padding-bottom:2px;
+	border-right-width:0px;
+	margin:3px 1px;
+	border-top-width:0px;
+	border-bottom-width:0px;
+	height:15px;
+	font-size:12px;
+	float:left;
+	border-left-width:0px;
+	padding-top:2px;
+	padding-left:3px;
+	cursor:text;
+	width:128px;
+	outline: none;
+}
+
+.trip8080Rightinput01 {
+	padding-bottom:2px;
+	margin:3px 1px;
+	border-right-width:0px;
+	border-left-width:0px;
+	border-top-width:0px;
+	border-bottom-width:0px;
+	height:15px;
+	font-size:12px;
+	float:left;
+	padding-top:2px;
+	padding-left:3px;
+	cursor:text;
+	width:146px;
+	outline: none;
+}
+.trip8080RightInDBig {
+	background:url(../../img/trip8080_btnandbj.gif) no-repeat 0px -43px;
+	height:24px;
+	width:243px;
+	outline: none;
+}
+.trip8080RightinputBig {
+	padding-bottom:2px;
+	border-right-width:0px;
+	margin:3px 1px;
+	border-top-width:0px;
+	border-bottom-width:0px;
+	height:15px;
+	font-size:12px;
+	float:left;
+	border-left-width:0px;
+	padding-top:2px;
+	cursor:text;
+	padding-left:3px;
+	width:235px;
+	outline: none;
+}
+.trip8080Chajian01 {
+	margin: 4px 4px 0px 0px;
+	width: 16px;
+	BACKGROUND: url(../../img/trip8080_btnandbj.gif) no-repeat -8px -2px;
+	border:none;
+	float:right;
+	height: 16px;
+	outline: none;
+}
+.trip8080Chajian02 {
+	margin: 4px 4px 0px 0px;
+	width: 16px;
+	BACKGROUND: url(../../img/trip8080_btnandbj.gif) no-repeat -8px -23px;
+	border:none;
+	float:right;
+	height: 16px;
+}
+.trip8080Table01 {
+	margin:5px 0px 5px 15px;
+}
+.trip8080Table01 tr {
+	height:38px;
+}
+.trip8080Table01 tr td{ 
+	vertical-align:middle;
+}
+
+.trip8080YudingBtn {
+	background:url(../../img/trip8080_btnandbj.gif) no-repeat -156px -70px;
+	width:87px;
+	height:29px;
+	border:none;
+	margin-left:25px;
+	cursor:pointer;
+}
+.trip8080ChaxunBtn {
+	background:url(../../img/trip8080_btnandbj.gif) no-repeat 0px -70px;
+	width:87px;
+	height:29px;
+	border:none;
+	cursor:pointer;
+}
+.trip8080_MAL {
+	margin-left:20px;
+}
+.trip8080_MAL25 {
+	margin-left:25px;
+}
+.trip8080_MAL32 {
+	margin-left:32px;
+*margin-left:38px;
+}
+.trip8080_MAL80 {
+	margin-left:80px;
+}
+.trip8080_fenge {
+	margin-left:8px;
+	margin-right:8px;
+	color:#002398;
+}
+.trip8080_line {
+	height:3px;
+	background:url(../../img/trip8080_index_03.gif) repeat-x;
+	margin:0px 3px;
+}
+.trip8080_bottom {
+	background:url(../../img/trip8080_btnandbj.gif) no-repeat -210px 5px;
+	padding-left:40px;
+	height:31px;
+	line-height:31px;
+	_margin-top:-12px;
+	float:left;
+}
+.trip8080Selwidth {
+	width:80px;
+	margin-right:5px;
+	outline: none;
+}
+.trip8080Timeinput {
+	padding-bottom:2px;
+	border-right-width:0px;
+	margin:4px 0px 0px 1px;
+	padding-left:3px;
+	width:145px;
+	padding-right:3px;
+	border-top-width:0px;
+	border-bottom-width:0px;
+	height:15px;
+	font-size:12px;
+	float:left;
+	border-left-width:0px;
+	padding-top:2px;
+	cursor: pointer;
+	background:url(../../img/trip8080_time.gif) no-repeat 134px 0px;
+}
+/*时间控件*/
+.trip8080month_div{
+	font-size:12px;
+}
+.trip8080date_bg {	
+	position:absolute;
+	top:10px;
+	left:10px;
+	background:#f1f1f1;
+	width:420px;
+}
+.trip8080date {
+	position:relative;
+	top:-3px;
+	left:-3px;
+	border:1px solid #D0D0D0;
+	background:#fff;
+	z-index:1000;
+}
+
+.trip8080head {
+	width:418px;
+	height:24px;
+	line-height:24px;
+	background:#2382ca;
+	color:#FFF;
+	font-weight:bold;
+}
+.trip8080head dl dd {
+	float:left;
+	padding-left:60px;
+	margin:0px;
+}
+.trip8080head dl dt {
+	float:left;
+}
+.trip8080date_main{clear:both; display:inline-block;}
+.trip8080date_left {
+	width:196px;
+	padding: 5px 5px 5px 7px;
+	float:left;
+	border-right:solid 2px #dcdcdc;
+}
+.trip8080date_right {
+	width:188px;
+	float:left;
+	padding: 5px 7px 5px 5px;
+}
+a.trip8080rootl:link {
+	display:block;
+	background:url(.trip8080.trip8080/img/root1.trip8080gif) no-repeat 2px 2px;
+	width:23px;
+	height:23px;
+}
+a.trip8080rootl:visited {
+	display:block;
+	background:url(.trip8080.trip8080/img/root1.trip8080gif) no-repeat 2px 2px;
+	width:23px;
+	height:23px;
+}
+a.trip8080rootl:hover {
+	display:block;
+	background:url(.trip8080.trip8080/img/root2.trip8080gif) no-repeat 2px 2px;
+	width:23px;
+	height:23px;
+}
+a.trip8080rootl:active {
+	display:block;
+	background:url(.trip8080.trip8080/img/root2.trip8080gif) no-repeat 2px 2px;
+	width:23px;
+	height:23px;
+}
+a.trip8080rootr:link {
+	display:block;
+	background:url(.trip8080.trip8080/img/root3.trip8080gif) no-repeat 2px 2px;
+	width:23px;
+	height:23px;
+}
+a.trip8080rootr:visited {
+	display:block;
+	background:url(.trip8080.trip8080/img/root3.trip8080gif) no-repeat 2px 2px;
+	width:23px;
+	height:23px;
+}
+a.trip8080rootr:hover {
+	display:block;
+	background:url(.trip8080.trip8080/img/root4.trip8080gif) no-repeat 2px 2px;
+	width:23px;
+	height:23px;
+}
+a.trip8080rootr:active {
+	display:block;
+	background:url(.trip8080.trip8080/img/root4.trip8080gif) no-repeat 2px 2px;
+	width:23px;
+	height:23px;
+}
+.trip8080span_ala {
+	font-family:Arial, Helvetica, sans-serif;
+	display:block;
+	width:24px;
+	height:22px;
+	line-height:22px;
+	background:#fff4cc;
+	border:solid 1px #ffe1a1;
+	text-align:center;
+	color:#2382ca;
+	font-weight:bold;
+	text-decoration:none;
+}
+.trip8080span_ala2 {
+	font-size:12px;
+	display:block;
+	width:24px;
+	height:22px;
+	line-height:22px;
+	_padding-top:3px;
+	background:#fff4cc;
+	border:solid 1px #ffe1a1;
+	text-align:center;
+	color:#2382ca;
+	text-decoration:none;}
+.trip8080ala {
+	font-family:Arial, Helvetica, sans-serif;
+	width:24px;
+	height:21px;
+	line-height:22px;
+	background:#fff;
+	border:solid 1px #fff;
+}
+a.trip8080ala:link {
+	font-family:Arial, Helvetica, sans-serif;
+	display:block;
+	line-height:22px;
+	text-align:center;
+	color:#2382ca;
+	font-weight:bold;
+	text-decoration:none;
+}
+a.trip8080ala:visited {
+	font-family:Arial, Helvetica, sans-serif;
+	display:block;
+	line-height:22px;
+	text-align:center;
+	color:#2382ca;
+	font-weight:bold;
+	text-decoration:none;
+}
+a.trip8080ala:hover {
+	font-family:Arial, Helvetica, sans-serif;
+	display:block;
+	line-height:22px;
+	background:#e8edf1;
+	border:solid 1px #dddddd;
+	text-align:center;
+	color:#2382ca;
+	font-weight:bold;
+	text-decoration:none;
+}
+a.trip8080ala:active {
+	font-family:Arial, Helvetica, sans-serif;
+	display:block;
+	line-height:22px;
+	background:#fff4cc;
+	border:solid 1px #ffe1a1;
+	text-align:center;
+	color:#2382ca;
+	font-weight:bold;
+	text-decoration:none;
+}
+.trip8080ala2 {
+	font-size:12px;
+	width:24px;
+	height:21px;
+	line-height:22px;
+	_padding-top:3px;
+	background:#fff;
+	border:solid 1px #fff;
+}
+a.trip8080ala2:link {
+	display:block;
+	line-height:22px;
+	_padding-top:3px;
+	text-align:center;
+	color:red;
+	font-size:12px;
+	text-decoration:none;
+}
+a.trip8080ala2:visited {display:block;
+	line-height:22px;
+	_padding-top:3px;
+	text-align:center;
+	color:red;
+	font-size:12px;
+	text-decoration:none;
+}
+a.trip8080ala2:hover {
+	display:block;
+	line-height:22px;
+	_padding-top:3px;
+	background:#e8edf1;
+	border:solid 1px #dddddd;
+	text-align:center;
+	color:red;
+	font-size:12px;
+	text-decoration:none;
+}
+a.trip8080ala2:active {
+	display:block;
+	line-height:22px;
+	_padding-top:3px;
+	background:#fff4cc;
+	border:solid 1px #ffe1a1;
+	text-align:center;
+	color:red;
+	font-size:12px;
+	text-decoration:none;
+}
+.trip8080mon{font-size:12px;
+}
+.trip8080mon tr th {
+	background:#dcdcdc;
+	height:24px;
+	line-height:24px;
+	color:#333;
+	text-align:center;
+}
+.trip8080mon tr td {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#999;
+	padding:1px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	width:22px;
+}
+.trip8080co_ff {
+	color:#ff6600
+}
+/* =17 kongjian 城市控件样式   
+––––––––––––––––2012-04-23加–––––––––––––––––––––––––––––––––––––––––––––––––––*/
+.trip8080_kongTouying {
+	float:left;
+	position:absolute;
+	top:50%;
+	left:40%;
+	background:#d9d9d9;
+	width:355px;
+	z-index:1000;
+}
+.trip8080_kongTouying_boder {
+	position:relative;
+	top:-1px;
+	left:-1px;
+	border:1px solid #d0d0d0;
+	padding:2px;
+	overflow:hidden;
+	background:#ffffff;
+}
+.trip8080_kongDiv {
+	margin-top:2px;
+	padding-bottom:6px;
+	padding-top:4px;
+	height:22px;
+}
+.trip8080_borbtm_dd {
+	border-bottom:solid 1px #dddddd;
+}
+.trip8080_kongDivheight {
+	height:170px;
+	width:350px;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+.trip8080_kongTouying_tab {
+	line-height:22px;
+	font-size:12px;
+}
+.trip8080_kongTouying_tab th {
+	padding-left:8px;
+	width:68px;
+	vertical-align:top;
+	text-align:left;
+	font-weight:normal;
+}
+.trip8080_kongTouying_tab th span {
+	width:60px;
+	height:22px;
+	float:left;
+	vertical-align:top;
+	overflow: hidden;
+	white-space: nowrap;
+	color:#333;
+}
+.trip8080_kongTouying_tab td {
+	text-align:left;
+	float:left;
+}
+.trip8080_kongTouying_tab td a {
+	width:60px;
+	margin-right:3px;
+	float:left;
+	overflow: hidden;
+	white-space: nowrap;
+	height:22px;
+}
+.trip8080_red_a2{ color:#a20000;}
+
+a.trip8080_blue:link, a.trip8080_blue:visited {
+	color:#1477c0;
+	text-decoration:none;
+}
+a.trip8080_blue:hover, a.trip8080_blue:active {
+	color:#ff6600;
+	text-decoration:underline;
+}
+/**城市下拉*/
+.select_city_list {
+	padding-bottom: 5px;
+}
+
+.select_city_list ul li {
+	list-style-type: none;
+}
+
+.select_city {
+	width: 180px;
+	line-height: 24px;
+	padding: 0px 5px;
+	float: left;
+	background: #fff;
+}
+
+.select_city:link,.select_city:visited {
+	text-decoration: none;
+	background: #fff;
+	display: block;
+	color: #333;
+}
+
+.select_city:active {
+	text-decoration: none;
+	background: #4878da;
+	color: #fff;
+	display: block;
+}
+
+.select_city_new {
+	text-decoration:none;
+	background:#4878da;
+	line-height:24px;
+	color:#fff;
+	padding:0px 5px;
+	display:block;
+}
+.select_city:hover {
+	text-decoration:none;
+	background:#e0edfe;
+	display:block;
+	color:#333;
+}
+/*2012-07-20新增*/
+.trip8080rongdivmian{
+	/*height:275px;*/
+	width:250px;
+	border:solid 1px #999; overflow:auto; overflow-x:no; overflow-y:auto;
+	max-height:200px;
+	_height:expression(this.scrollHeight>200?200:this.scrollHeight);
+}
+.trip8080rongdivmian p{
+	margin: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	height:25px;
+	line-height:25px;
+	padding-left:5px;
+}
+.trip8080rongdivmian p span{
+	color:#ff6702;
+}
+.trip8080LineDiv{height:25px;cursor: pointer;}
+.trip8080LineDiv .left{
+	height:25px;
+	line-height:25px;
+	padding-left:5px;
+	white-space:nowrap; overflow:hidden;
+	float:left; }
+.trip8080LineDiv .right{height:25px;
+	line-height:25px;
+	white-space:nowrap; overflow:hidden;
+	float:right; 
+	text-align:right;}
+.trip8080LineDiv span{
+	color:#ff6702;}
+	
+a.trip8080rongA:link, a.trip8080rongA:visited {
+	color:#333333;
+	text-decoration:none;
+	display:block;
+}
+a.trip8080rongA:hover, a.trip8080rongA:active {
+	color:#ffffff;
+	text-decoration:none;
+	display:block;
+	background:#1277bf;
+}
+a.trip8080rongAhover{
+	color:#ffffff;
+	text-decoration:none;
+	display:block;
+	background:#1277bf;
+}
+.trip8080rongdivmiancuo{
+	height:25px;
+	border:solid 1px #999;
+}
+.trip8080rongred{
+	background:#b20000;
+	line-height:25px;
+	color:#FFF;
+	padding-left:5px;
+}
+.trip8080Red{
+	color:#ff0000;
+}
+.trip8080Col999{
+	color:#999;
+}
+/*2013-02-06 新增*/
+.left {
+	float:left;
+}
+.clear{
+	clear:both;
+}
+.line30 {
+	line-height: 30px;
+}
+
+.trip8080left10{ margin-left:10px;}
+.trip8080right10{ margin-right:10px;}
+.trip8080left{ float:left;}
+.trip8080bold{ font-weight:bold;}
+
+.trip8080_plugin_wap{font: normal 12px arial, Helvetica, sans-serif;font-size:12px; width:354px;border:1px solid #d0d0d0; background-color:#fff; box-shadow:3px 3px 0 rgba(217,217,217,1); float:left; position:absolute; z-index:1000;}
+.trip8080_plugin_wap a,ul,  li, dt, dd{margin:0px;}
+.trip8080_plugin_top{ height:30px; width:100%; line-height:30px; background-color:#f6f6f6}
+.trip8080_plugin_top .trip8080_cityHot a,.trip8080_plugin_citys .list dl dd a{ width:60px; float:left; isplay:inline-block; overflow:hidden;}
+.trip8080_plugin_citys{ width:350px; margin-left:2px; overflow: hidden;}
+.trip8080_plugin_citys .head{ height:22px; width:350px; float:left;border-bottom:1px solid #d0d0d0; margin-top:5px; position:relative;}
+.trip8080_plugin_citys .head #li1{ position:absolute; left:10px; top:0}
+.trip8080_plugin_citys .head #li2{ position:absolute; left:89px; top:0;}
+.trip8080_plugin_citys .head li{ border:1px solid #ddd; background-color:#f6f6f6; height:21px; border-bottom:none;line-height:21px; padding:0 10px;cursor:pointer; float:left; display:inline}
+.trip8080_plugin_citys .head li.hover{background-color:#fff;border-bottom:1px solid #fff !important;}
+.trip8080_plugin_citys .list{ width:330px; height:178px; float:left; overflow: auto; line-height:24px; padding:0 10px; margin:2px 0;}
+.trip8080_plugin_citys .list dl dt{ width:60px; float:left; font-weight:bold;}
+.trip8080_plugin_citys .list dl dd{ width:240px; float:left;}
