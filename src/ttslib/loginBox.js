@@ -1,7 +1,22 @@
+/**
+ *@fileoverview 登陆框控件
+ *@author raul73521@yahoo.com.cn
+ */
 define(['base','common','css!assets/css/open_style.css','css!assets/css/unite.css'],function(TTS,Common){
+	 /**
+	  * @name loginBox
+	  * @class 登陆框
+	  */
 	var T = TTS,
 		baseUrl = T.baseUrl;
 	TTS.extend({
+		/** @lends loginBox.prototype*/
+		
+		/**
+		 * 登陆框控件
+		 * @param params
+		 * @param {Function} params.complete 登录成功以后所触发的事件，默认是刷新当前页面
+		 */
 		loginBox : function(params){
 			var complete = function(){window.location.reload()};//默认行为是刷新
 			if(params && params.complete){

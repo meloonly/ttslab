@@ -1,8 +1,12 @@
-/*@module cityset
- *城市控件模块，包括了城市下拉、到达站查询、各种城市控件
+/**
+ *@fileoverview 城市控件模块，包括了城市下拉、到达站查询、各种城市控件
  *@author raul73521@yahoo.com.cn
  */
  define(['base','css!assets/css/open_style'],function(TTS){
+	 /**
+	  * @name cityset
+	  * @class cityset 城市控件集
+	  */
  	var T = TTS,D = document,W = window,
  		iframeId = 'trip8080Iframe',
  		boxId = 'trip8080City',
@@ -22,7 +26,7 @@
  			},
  			store : {}
  		},
- 		showBox = function(id,left,bottom){
+ 		showBox = function(id,left,bottom,floatId,show_obj){
  			var cityObj = T.byId(id);
  			var iframeObj = T.byId(iframeId);
  			if(!iframeObj){
@@ -34,6 +38,53 @@
 			if(left+355 > document.body.clientWidth-10){//超出浏览器宽度了
 				left = document.body.clientWidth-10-355;
 			}
+			if(floatId && T.byId(floatId)){//如果需要浮动
+				var floatDom = T.byId(floatId);
+				if(window.attachEvent){//IE
+					window.attachEvent('onscroll',function(){
+						if(floatDom.style.position === 'fixed'){
+							cityObj.style.position = 'fixed';
+							bottom = T.getOffsetTop(show_obj) + 25;
+							iframeObj.style.position = 'fixed';
+						}else{
+							iframeObj.style.position = 'absolute';
+							cityObj.style.position = 'absolute';
+							bottom = T.getOffsetTop(show_obj) + 25;
+						}
+						cityObj.style.top = bottom + 'px';
+						cityObj.style.left = left + 'px';
+						iframeObj.style.width = '190px';
+						iframeObj.style.display = 'block';
+						iframeObj.style.top = bottom + 'px';
+						iframeObj.style.left = left + 'px';
+						iframeObj.style.height=cityObj.offsetHeight+"px";
+					})
+				}else if(window.addEventListener){
+					window.addEventListener('scroll', function(){
+						if(floatDom.style.position === 'fixed'){
+							cityObj.style.position = 'fixed';
+							bottom = T.getOffsetTop(show_obj) + 25;
+							iframeObj.style.position = 'fixed';
+						}else{
+							cityObj.style.position = 'absolute';
+							iframeObj.style.position = 'absolute';
+							bottom = T.getOffsetTop(show_obj) + 25;
+						}
+						cityObj.style.top = bottom + 'px';
+						cityObj.style.left = left + 'px';
+						iframeObj.style.width = '190px';
+						iframeObj.style.display = 'block';
+						iframeObj.style.top = bottom + 'px';
+						iframeObj.style.left = left + 'px';
+						iframeObj.style.height=cityObj.offsetHeight+"px";
+					},false);
+				}
+				if(floatDom.style.position === 'fixed'){
+					iframeObj.style.position = 'fixed';
+					cityObj.style.position = 'fixed';
+					bottom = T.getOffsetTop(show_obj) + 25;
+				}
+			}
 			cityObj.style.top = bottom + 'px';
 			cityObj.style.left = left + 'px';
 			iframeObj.style.width = cityObj.offsetWidth+'px';
@@ -42,7 +93,7 @@
 			iframeObj.style.left = left + 'px';
 			iframeObj.style.height=cityObj.offsetHeight+"px";
  		},
- 		showSelect = function(id,left,bottom){
+ 		showSelect = function(id,left,bottom,floatId,show_obj){
  			var cityObj = T.byId(id);
 			var iframeObj = T.byId(iframeId);
 			if(!iframeObj){
@@ -53,6 +104,53 @@
  			}
 			if(left+190 > document.body.clientWidth-10){//超出浏览器宽度了
 				left = document.body.clientWidth-10-190;
+			}
+			if(floatId && T.byId(floatId)){//如果需要浮动
+				var floatDom = T.byId(floatId);
+				if(window.attachEvent){//IE
+					window.attachEvent('onscroll',function(){
+						if(floatDom.style.position === 'fixed'){
+							cityObj.style.position = 'fixed';
+							bottom = T.getOffsetTop(show_obj) + 25;
+							iframeObj.style.position = 'fixed';
+						}else{
+							iframeObj.style.position = 'absolute';
+							cityObj.style.position = 'absolute';
+							bottom = T.getOffsetTop(show_obj) + 25;
+						}
+						cityObj.style.top = bottom + 'px';
+						cityObj.style.left = left + 'px';
+						iframeObj.style.width = '190px';
+						iframeObj.style.display = 'block';
+						iframeObj.style.top = bottom + 'px';
+						iframeObj.style.left = left + 'px';
+						iframeObj.style.height=cityObj.offsetHeight+"px";
+					})
+				}else if(window.addEventListener){
+					window.addEventListener('scroll', function(){
+						if(floatDom.style.position === 'fixed'){
+							cityObj.style.position = 'fixed';
+							bottom = T.getOffsetTop(show_obj) + 25;
+							iframeObj.style.position = 'fixed';
+						}else{
+							cityObj.style.position = 'absolute';
+							iframeObj.style.position = 'absolute';
+							bottom = T.getOffsetTop(show_obj) + 25;
+						}
+						cityObj.style.top = bottom + 'px';
+						cityObj.style.left = left + 'px';
+						iframeObj.style.width = '190px';
+						iframeObj.style.display = 'block';
+						iframeObj.style.top = bottom + 'px';
+						iframeObj.style.left = left + 'px';
+						iframeObj.style.height=cityObj.offsetHeight+"px";
+					},false);
+				}
+				if(floatDom.style.position === 'fixed'){
+					iframeObj.style.position = 'fixed';
+					cityObj.style.position = 'fixed';
+					bottom = T.getOffsetTop(show_obj) + 25;
+				}
 			}
 			cityObj.style.top = bottom + 'px';
 			cityObj.style.left = left + 'px';
@@ -82,6 +180,7 @@
 				onEnter = params.onEnter || function(){},
 				errorFun = params.onError || function(){},
 				e = params.e || window.event,
+				floatId = params.floatId || '',
 
 				//定制的属性
 				createBox = params.createBox || function(){},
@@ -181,7 +280,7 @@
 						}
 					}
 					//显示就放在这里吧
-					showSelect(selectId,left,bottom);
+					showSelect(selectId,left,bottom,floatId,showObj);
 				};
 
 			//回车响应onEnter事件
@@ -190,7 +289,7 @@
 				return;
 			}
 			///键盘输入事件
-			//@TODO inputValue.length设置成变量（触发数据查询）
+			//TODO inputValue.length设置成变量（触发数据查询）
 			if (T.trim(inputValue) == '' || inputValue.length < 2) {
 				closeCitySelect();
 			} else {
@@ -232,7 +331,20 @@
  		var rChinese = /[\u4E00-\u9FA5\uF900-\uFA2D]+$/;
  		var	rLetter = /^[A-Za-z]+$/;
 
+ 		/** @lends cityset.prototype*/
  	TTS.extend({
+ 		/**
+ 		 * 城市控件集合
+ 		 * @param params
+ 		 * @param {String} params.type *城市类型（book,shike,chezhan,daishou,shike_st,shike_en,weather）
+ 		 * @param {String} params.triggerId *触发控件的ID，即点击事件产生的元素ID
+ 		 * @param {String} params.presentId *控件展示所依赖的元素ID
+ 		 * @param {String} params.floatId 如果需要跟随某元素悬浮，则指定这个元素的ID
+ 		 * @param {Function} params.onclick *选择一个城市所触发的点击事件
+ 		 * @param {Function} params.before 选择一个城市之前所触发的事件
+ 		 * @param {Function} params.after 选择一个城市之后所触发的事件
+ 		 * @param {Function} params.onclose 关闭控件所触发的事件
+ 		 */
  		city : function(params){
  			if(params.type === 'book'){
  				TTS.cityBook(params);
@@ -245,6 +357,7 @@
 				before = params.before || function(){},
 				after = params.after || function(){},
 				onclose = params.onclose || function(){},
+				floatId = params.floatId || '',
 			
 				show_obj = T.byId(presentId),
 				left = T.getOffsetLeft(show_obj),// 文本框的左边位置
@@ -346,7 +459,7 @@
 				clearCity();
 				T.show(boxId);
 				createData();
-				showBox(boxId,left,bottom);
+				showBox(boxId,left,bottom,floatId,show_obj);
 				// 绑定DOM事件
 				if (!T.triggerIdMap.city[triggerId]) {
 					T.triggerIdMap.city[triggerId] = true;
@@ -359,7 +472,7 @@
 				require(['text!assets/template/citybox.html!strip'],function(html){
 					cDiv.innerHTML = html;
 					createData();
-					showBox(boxId,left,bottom);
+					showBox(boxId,left,bottom,floatId,show_obj);
 					// 绑定DOM事件
 					if (!T.triggerIdMap.city[triggerId]) {
 						T.triggerIdMap.city[triggerId] = true;
@@ -369,6 +482,18 @@
 			}
 		},
 
+		/**
+ 		 * 预订城市专用城市控件（样式不同所以独立开）
+ 		 * @param params
+ 		 * @param {String} params.type *城市类型（book）
+ 		 * @param {String} params.triggerId *触发控件的ID，即点击事件产生的元素ID
+ 		 * @param {String} params.presentId *控件展示所依赖的元素ID
+ 		 *   @param {String} params.floatId 如果需要跟随某元素悬浮，则指定这个元素的ID
+ 		 * @param {Function} params.onclick *选择一个城市所触发的点击事件
+ 		 * @param {Function} params.before 选择一个城市之前所触发的事件
+ 		 * @param {Function} params.after 选择一个城市之后所触发的事件
+ 		 * @param {Function} params.onclose 关闭控件所触发的事件
+ 		 */
 		cityBook : function(params){
 			var cType = 'book',
 				triggerId = params.triggerId || '',
@@ -377,6 +502,7 @@
 				before = params.before || function(){},
 				after = params.after || function(){},
 				onclose = params.onclose || function(){},
+				floatId = params.floatId || '',
 				
 				show_obj = T.byId(presentId),
 				left = T.getOffsetLeft(show_obj),// 文本框的左边位置
@@ -510,7 +636,7 @@
 				clearCity();
 				T.show(boxId);
 				createData();
-				showBox(boxId,left,bottom);
+				showBox(boxId,left,bottom,floatId,show_obj);
 				// 绑定DOM事件
 				if (!T.triggerIdMap.city[triggerId]) {
 					T.triggerIdMap.city[triggerId] = true;
@@ -523,7 +649,7 @@
 				require(['text!assets/template/bookCitybox.html!strip'],function(html){
 					cDiv.innerHTML = html;
 					createData();
-					showBox(boxId,left,bottom);
+					showBox(boxId,left,bottom,floatId,show_obj);
 					// 绑定DOM事件
 					if (!T.triggerIdMap.city[triggerId]) {
 						T.triggerIdMap.city[triggerId] = true;
@@ -546,6 +672,22 @@
 			}
 		},
 
+		/**
+		 * 城市下拉控件
+		 * @param params
+		 * @param {String} params.type *城市类型
+		 * @param {String} params.triggerId *触发控件的ID，即点击事件产生的元素ID
+		 * @param {String} params.presentId *控件展示所依赖的元素ID
+		 * @param {String} params.hiddenCityId *存放城市ID的元素
+		 * @param {String} params.floatId 如果需要跟随某元素悬浮，则指定这个元素的ID
+		 * @param {Function} params.onclick *选中一个城市所触发的事件
+		 * @param {Function} params.before 选中一个城市之前所触发的事件
+		 * @param {Function} params.after 选中一个城市之后所触发的事件
+		 * @param {Function} params.onclose 关闭控件所触发的事件
+		 * @param {Function} params.onEnter 焦点在文本框中且控件关闭的情况下的回车事件，主要触发查询事件
+		 * @param {Function} params.onError 当查询不到数据时触发的事件
+		 * @param {Object} params.e *文本框中的事件event
+		 */
 		citySelect : function(params){
 			var cType = params.type || '';
 			var url = config.citySelUrl+'?type='+cType;
@@ -599,6 +741,21 @@
 			select(params);
 		},
 
+		/**
+		 * 汽车站下拉控件
+		 * @param params
+		 * @param {String} params.cityId *汽车站所属城市的ID
+		 * @param {String} params.triggerId *触发控件的ID，即点击事件产生的元素ID
+		 * @param {String} params.presentId *控件展示所依赖的元素ID
+		 * @param {String} params.floatId 如果需要跟随某元素悬浮，则指定这个元素的ID
+		 * @param {Function} params.onclick *选中一个城市所触发的事件
+		 * @param {Function} params.before 选中一个城市之前所触发的事件
+		 * @param {Function} params.after 选中一个城市之后所触发的事件
+		 * @param {Function} params.onclose 关闭控件所触发的事件
+		 * @param {Function} params.onEnter 焦点在文本框中且控件关闭的情况下的回车事件，主要触发查询事件
+		 * @param {Function} params.onError 当查询不到数据时触发的事件
+		 * @param {Object} params.e *文本框中的事件event
+		 */
 		stationSelect : function(params){
 			var cityId = params.cityId || '';
 			var url = config.stationSelUrl+'?cid='+cityId;
@@ -635,6 +792,21 @@
 			select(params);
 		},
 
+		/**
+		 * 到达站下拉控件
+		 * @param params
+		 * @param {String} params.startCityId * 出发城市ID
+		 * @param {String} params.triggerId *触发控件的ID，即点击事件产生的元素ID
+		 * @param {String} params.endCityNameId *控件展示所依赖的元素ID
+		 * @param {String} params.floatId 如果需要跟随某元素悬浮，则指定这个元素的ID
+		 * @param {Function} params.onclick *选中一个城市所触发的事件
+		 * @param {Function} params.before 选中一个城市之前所触发的事件
+		 * @param {Function} params.after 选中一个城市之后所触发的事件
+		 * @param {Function} params.onclose 关闭控件所触发的事件
+		 * @param {Function} params.onEnter 焦点在文本框中且控件关闭的情况下的回车事件，主要触发查询事件
+		 * @param {Function} params.onError 当查询不到数据时触发的事件
+		 * @param {Object} params.e *文本框中的事件event
+		 */
 		bookEndCity : function(params){
 			var bookStartId = params.startCityId || '',
 				url = config.bookEndUrl+'?cid='+bookStartId;
@@ -691,6 +863,14 @@
 			select(params);
 		},
 
+		/**
+ 		 * 省市联动之省份控件
+ 		 * @param params
+ 		 * @param {String} params.type 省份类型（chezhan，默认为所有省份）
+ 		 * @param {String} params.triggerId *触发控件的ID，即点击事件产生的元素ID
+ 		 * @param {String} params.presentId *控件展示所依赖的元素ID
+ 		 * @param {Function} params.onclick *选择一个省份所触发的点击事件
+ 		 */
 		pcaPro : function(params){
 			var type = params.type || 'province',
 			 	presentId = params.presentId || '',
@@ -802,6 +982,15 @@
 			
 		},
 		
+		/**
+ 		 * 省市联动之城市控件
+ 		 * @param params
+ 		 * @param {String} params.type 城市类型（chezhan，默认为所有城市）
+ 		 * @param {String} params.triggerId *触发控件的ID，即点击事件产生的元素ID
+ 		 * @param {String} params.presentId *控件展示所依赖的元素ID
+ 		 * @param {String} params.pid *存放省份的元素ID
+ 		 * @param {Function} params.onclick *选择一个省份所触发的点击事件
+ 		 */
 		pcaCity : function(params){
 			var type = params.type || '',
 				presentId = params.presentId || '',
@@ -903,4 +1092,4 @@
 		}
  	})
  	return TTS;
- })
+ });

@@ -90,7 +90,8 @@ define(['./normalize', 'module'], function(normalize, module) {
   //main api object
   var cssAPI = {};
   
-  cssAPI.pluginBuilder = './css-builder';
+  //'./css-builder'
+  cssAPI.pluginBuilder = './css';
   
   //uses the <style> load method
   var stylesheet = document.createElement('style');

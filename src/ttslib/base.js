@@ -1,8 +1,13 @@
-/*ttslib v-1.0.0
- *基础模块，可以单独引用或是当成模块引用
+/**
+ *@fileoverview 基础模块，可以单独引用或是当成模块引用
  *@author raul73521@yahoo.com.cn
  */
 (function(W,T,undefined){
+	/**
+	 * @name base
+	 * @class  基础模块，可以单独引用或是当成模块引用
+	 * @version  ttslib v-1.0.0
+	 */
 	if (W[T] === undefined) W[T] = {};
     T = W[T];
 	var rtrim = /(^\s*)|(\s*$)/g;
@@ -12,6 +17,7 @@
    		_innerHeight = document.documentElement.clientHeight;
    	}
    	//jquery的实现方式
+   	/** @lends base.prototype*/
 	var _extend = function(){
 		//参数可选，deep,target,options
 		var options, name, src, copy, copyIsArray, clone,
@@ -78,26 +84,48 @@
 	};
 
     _extend (T, {
-    	baseUrl : 'http://www.trip8080.com/',
+    	/**
+    	 * 所有请求的基本路径
+    	 */
+    	baseUrl : T.baseUrl || 'http://www.trip8080.com/',
 
+    	/**
+    	 * 服务器时间
+    	 */
     	serverTime : '',
 
+    	/**
+    	 * 是否是数组
+    	 * @param {Object} elem
+    	 * @returns {Boolean}
+    	 */
     	isArray : function(elem){
 			return Object.prototype.toString.call(elem) === '[object Array]';
 		},
 
+		/**
+		 * 是否是函数
+		 * @param {Object} elem
+		 * @returns {Boolean}
+		 */
 		isFunction : function(elem){
 			return Object.prototype.toString.call(elem) === '[object Function]';
 		},
 
 		/**
-		 * TODO
-		 * see http://lifesinger.org/blog/2010/12/thinking-of-isplainobject/
-		 */ 
+		 * 是否是对象
+		 * @param {Object} o
+		 * @returns {Boolean}
+		 */
+		//see http://lifesinger.org/blog/2010/12/thinking-of-isplainobject/
 		isPlainObject:function (o) {
             return o && toString.call(o) === '[object Object]' && 'isPrototypeOf' in o;
         },
 
+        /**
+         * @param {String} data
+         * @returns {Object}
+         */
     	parseJSON : function( data ) {
 			if ( !data || typeof data !== "string") {
 				return null;
@@ -118,21 +146,42 @@
 			}
 		},
 
+		/**
+		 * 去除首尾空格
+		 * @param {String} str
+		 * @returns {String} 返回处理过的字符串
+		 */
 		trim : function(str){
 			if(str==null){return '';}
 			return str.replace(rtrim, '');
 		},
 
+		/**
+		 * 补零函数
+		 * @param {Number} t 传入数字 
+		 * @returns {String} 若传入的是0-10之间的数字则补零返回，否则不做变化
+		 */
 		_t : function(t){
 			if(typeof t != 'number'){return;}
 			var tt = Math.round(t);
 			return tt<10?'0'+tt:tt;
 		},
 
+		/**
+		 * 返回document.getElementById(id)
+		 * @param {String}  id 某元素id
+		 * @returns {Object} 
+		 */
 		byId : function(id){
 			return document.getElementById(id)?document.getElementById(id):null;
 		},
 
+		/**
+		 * 返回所有指定className的元素集合
+		 * @param {String} className *class名称
+		 * @param {Object} context 指定一个上下文，不传默认为全局
+		 * @returns {Array} 返回class为
+		 */
 		byClass : function(className,context){
 			var res = [];
 			var _all = context!=null ? context : document.getElementsByTagName('*');
@@ -144,6 +193,11 @@
 			return res;
 		},
 
+		/**
+		 * 返回某个元素的所有祖先节点集合
+		 * @param {Object} elem *指定一个元素
+		 * @returns {Array} 返回该元素的所有祖先节点，若无祖先返回[]
+		 */
 		parent : function(elem){
 			var res = [],
 				t = elem.parentNode;
@@ -153,6 +207,11 @@
 			return res;
 		},
 
+		/**
+		 * 获得元素的offsetTop，等同于jqueryObject.offset().top
+		 * @param {Object} el *指定一个元素
+		 * @returns {String} 返回元素的offsetTop 
+		 */
 		getOffsetTop : function(el){
 			var _t =el.offsetTop;
 	        while(el = el.offsetParent){
@@ -161,6 +220,11 @@
 	    	return _t;
 		},
 
+		/**
+		 * 获得元素的offsetLeft，等同于jqueryObject.offset().left
+		 * @param {Object} el *指定一个元素
+		 * @returns {String} 返回元素的offsetLeft
+		 */
 		getOffsetLeft : function(el){
 			var _t =el.offsetLeft;
 		        while(el =el.offsetParent){
@@ -169,18 +233,39 @@
 		    return _t;
 		},
 
+		/**
+		 * 隐藏元素
+		 * @param {String} id *指定需要隐藏元素的id
+		 */
 		hide : function(id){
 			if (T.byId(id)) {T.byId(id).style.display = 'none'}
 		},
 
+		/**
+		 * 显示元素
+		 * @param {String} id *指定需要显示元素的id
+		 */
 		show : function(id){
 			if (T.byId(id)) {T.byId(id).style.display = 'block'}
 		},
 
+		/**
+		 * 返回一个指定长度的字符串
+		 * @param {String} str *指定一个字符串
+		 * @param {Number} maxLen *指定一个长度 
+		 * @returns {String} 指定长度的字符串并以'...'结尾
+		 */
 		limitLenStr : function(str,maxLen){
 			return str!=null && str.length > maxLen ? str.slice(0,maxLen)+'...' : str;
 		},
 
+		/**
+		 * jsonp请求
+		 * @param params
+		 * @param {String} params.url *请求的url地址
+		 * @param {Function} params.success *所有步骤成功了以后执行的函数
+		 * @param {Function} params.callback *回调函数
+		 */
 		jsonp : function(params){
 			this.url = params.url || "";
 			var success = params.success || function(){};
@@ -206,8 +291,13 @@
 			};
 		},
 
-		//jquery
-		//@TODO
+		/**
+		 * 判断某元素是否在一个数组中，并返回下标
+		 * @param {Object} elem * 指定元素
+		 * @param {Array} arr * 指定数组
+		 * @param {Number} i  指定数组的起始位置
+		 * @returns {Number}  如果存在则返回该元素在指定数组中的下标，否则返回-1
+		 */
 		inArray: function( elem, arr, i ) {
 			var len;
 
@@ -230,11 +320,21 @@
 			return -1;
 		},
 
+		/**
+		 * 获得baseUrl
+		 * @returns {String}
+		 */
 		getBaseUrl : function(){
 			return T.baseUrl;
 		},
-
-		bindClick : function (triggerId,boxId,closeFun) {// 触发事件的ID，控件ID，关闭控件方法
+		
+		/**
+		 * 绑定点击事件
+		 * @param triggerId *触发事件的ID
+		 * @param boxId *控件ID
+		 * @param closeFun *关闭控件方法
+		 */
+		bindClick : function (triggerId,boxId,closeFun) {
 			if(document.onclick != null){
 				var clickFun = document.onclick;
 				document.onclick = function(event){
@@ -272,6 +372,10 @@
 			}
 		},
 
+		/**
+		 * 获得服务器时间并执行回调函数
+		 * @param {Function} fn
+		 */
 		setTime : function(fn){
 			if(T.serverTime == ''){
 				T.jsonp({
@@ -308,33 +412,6 @@
 
 
     });
-
-	// T.extend({
-		
-	// 	componentConfig : {
-	// 		'cssUrl' : T.getBaseUrl() + 'open/css/open_style.css',
-	// 		'bookEndUrl' : T.baseUrl + 'open/book.jspx',
-	// 		'citySelUrl' : T.baseUrl + 'open/citySelect.jspx',
-	// 		'stationSelUrl' : T.baseUrl + 'open/chezhan.jspx',
-	// 		'pcaProvinceUrl' : T.baseUrl + 'open/pcaProvinces.jspx',
-	// 		'pcaCityUrl' : T.baseUrl + 'open/pcaCities.jspx',
-	// 		'serverTimeUrl' : T.baseUrl + 'open/getTime.jspx',
-	// 		'cityTypeConfig':{
-	// 			'cityUrl' : T.baseUrl +'open/cityArr.jspx',
-	// 			'book' : {'arr':[],'hotStr':'','otherStr':'','q':'book'},
-	// 			'shike' : {'arr':[],'hotStr':'','otherStr':'','q':'shike'},
-	// 			'chezhan' : {'arr':[],'hotStr':'','otherStr':'','q':'chezhan'},
-	// 			'daishou' : {'arr':[],'hotStr':'','otherStr':'','q':'daishou'},
-	// 			'shike_st' : {'arr':[],'hotStr':'','otherStr':'','q':'shike_st'},
-	// 			'shike_en' : {'arr':[],'hotStr':'','otherStr':'','q':'shike_en'},
-	// 			'weather' : {'arr':[],'hotStr':'','otherStr':'','q':'weather'}
-	// 		},
-	// 		'bookEndCityArr':[],
-	// 		'citySelectArr':[],		// 缓存城市下拉匹配
-	// 		'stationSelectArr':[],	// 缓存车站下拉匹配
-	// 		'pcaProvinceStr': ''	// 缓存省份列表
-	// 	}
-	// })
 
     if(typeof define === 'function' && define.amd){
        	define('base', function () { return T; });

@@ -1,10 +1,27 @@
-/*@module dataPicker
- *日期控件
+/**
+ *@fileoverview 日期控件
  *@author raul73521@yahoo.com.cn
  */
- define(['base','css!assets/css/open_style'],function(){
+ define(['base','css!assets/css/open_style'],function(TTS){
+	 /**
+	  * @name datePicker
+	  * @class 日期控件
+	  */
  	var T = TTS;
  	TTS.extend({
+ 		/** @lends datePicker.prototype*/
+		
+		/**
+		 * 触发日期控件
+		 * @param params
+		 * @param {String} params.preDateId  *预售期元素ID
+		 * @param {String} params.triggerId *触发日期控件的ID
+		 * @param {Function} params.onclick  *选择一个日期所触发的事件
+		 * @param {String} params.maxSellDayId *最大预售时限ID
+		 * @param {String} params.defaultDate 默认日期
+		 * @param {String} params.floatId 如果需要跟随某元素悬浮，则指定这个元素的ID
+		 * @param {String} params.presentId *展示所依赖的元素ID
+		 */
  		datePicker : function(params){
 			var preDateId = params.preDateId || '',
 				id = params.triggerId || '',
